@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Tourism - Restaurants</title>
+    <link rel="stylesheet" href="/css/admin-rest.css">
+    <link rel="stylesheet" href="css/display.css"
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Pune Tourism</h1>
+        <form class="nav-btn" action="/" method="get">
+            <button type="submit">Home</button>
+        </form>
+        <form class="nav-btn" action="/restaurent" method="get">
+            <button type="submit">Find Places to Eat</button>
+        </form>
+        <form class="nav-btn" action="/market" method="get">
+            <button type="submit">Find Markets to Visit</button>
+        </form>
+        <form class="nav-btn" action="/activity" method="get">
+            <button type="submit">Find Activities Happening</button>
+        </form>
+    </div>
+
+    
+    <main>
+        {{#if content.length}} 
+            <div class="hotel-container">
+                {{#each content }}  
+                <article>
+                    
+                    <header id="hotel_name">
+                        <h1>{{this.name}}</h1>
+                    </header>
+
+                    
+                    <div id="photoarea">
+                        <div class="slider">
+                            <div class="slides">
+                                <div class="slide"><img src="{{this.imageURL1}}" alt="Image 1"></div>
+                                <div class="slide"><img src="{{this.imageURL2}}" alt="Image 2"></div>
+                                <div class="slide"><img src="{{this.imageURL3}}" alt="Image 3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="owner">
+                        <h3>Owner: {{this.owner}}</h3>
+                    </div>
+                    <div class="price">
+                        <h4>Average Cost: {{this.cost}}</h4>
+                    </div>
+                    <div class="address">
+                        <p>Address: {{this.address}}</p>
+                    </div>
+                    <div class="rating_star">
+                        <h5>Ratings: {{this.rating}}/5</h5>
+                    </div>
+
+                   
+                    <a href="/specific/market-spec/{{this._id}}">
+                        <button class="nav-btn">Details</button>
+                    </a>
+                </article>
+                {{/each}}
+            </div>
+        {{else}}
+            <h1>No Restaurants to Display</h1>
+        {{/if}}
+    </main>
+
+</body>
+</html>

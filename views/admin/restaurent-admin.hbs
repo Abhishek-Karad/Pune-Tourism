@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Tourism - Admin View</title>
+    <link rel="stylesheet" href="/css/admin-rest.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Pune Tourism</h1>
+        <form class="nav-btn" action="/" method="get">
+            <button type="submit">Home</button>
+        </form>
+        <form class="nav-btn" action="/hotel" method="get">
+            <button type="submit">Hotels</button>
+        </form>
+        <form class="nav-btn" action="/market" method="get">
+            <button type="submit">Markets</button>
+        </form>
+        <form class="nav-btn" action="/activity" method="get">
+            <button type="submit">Activities</button>
+        </form>
+        <h3 style="color: white; padding-left: 100px;">Admin-View</h3>
+    </div>
+
+    <main>
+        {{#if content.length}}
+        <div class="hotel-container">
+            {{#each content}}
+            <article>
+                <header id="hotel_name">
+                    <h1>{{this.name}}</h1>
+                </header>
+                <div id="photoarea">
+                    <div class="slider">
+                        <div class="slides">
+                            <div class="slide"><img src="{{this.imageURL1}}" alt="Image 1"></div>
+                            <div class="slide"><img src="{{this.imageURL2}}" alt="Image 2"></div>
+                            <div class="slide"><img src="{{this.imageURL3}}" alt="Image 3"></div>
+                            <div class="slide"><img src="{{this.imageURL4}}" alt="Image 4"></div>
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <button onclick="prevSlide()">❮</button>
+                        <button onclick="nextSlide()">❯</button>
+                    </div>
+                </div>
+                <div class="owner">
+                    <h3>Owner: {{this.owner}}</h3>
+                </div>
+                <div class="price">
+                    <h4>Price for 2: {{this.price}}</h4>
+                </div>
+                <div class="address">
+                    <p>Address: {{this.address}}</p>
+                </div>
+                <div class="contact">
+                    <h4>Contact Details: {{this.contact}}</h4>
+                </div>
+                <div class="rating_star">
+                    <h5>Ratings: {{this.rating}}/5</h5>
+                </div>
+                 <form action="/admin/delete-Restaurant" method="post">
+                   <input type="hidden" value="{{this._id}}" name="_id">
+                    <button>Delete</button>
+                </form>
+            </article>
+            {{/each}}
+        </div>
+        {{else}}
+        <h1>No Restaurants to Display</h1>
+        {{/if}}
+    </main>
+
+    <script src="/js/slider.js"></script>
+</body>
+</html>
+

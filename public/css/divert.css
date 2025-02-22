@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #3a86ff;
+  color: white;
+  padding: 15px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #e0e0e0;
+}
+
+.navbar h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+
+/* Button Containers */
+#Listings, #Viewing {
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+#Listings {
+  background: #d0ebff;
+  border-left: 5px solid #3a86ff;
+}
+
+#Viewing {
+  background: #ffd6a5;
+  border-left: 5px solid #ff9f1c;
+}
+
+/* Button Styling */
+form {
+  margin: 5px;
+}
+
+form button {
+  background: linear-gradient(135deg, #5a67d8, #3a86ff);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #3a86ff, #5a67d8);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+form button:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+  }
+
+  #Listings, #Viewing {
+      flex-direction: column;
+      width: 100%;
+      padding: 15px;
+  }
+
+  form button {
+      width: 100%;
+  }
+}

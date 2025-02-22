@@ -1,0 +1,27 @@
+{
+  "name": "pune_tourism",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "author": "Abhishek",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-mongodb-session": "^5.0.0",
+    "csurf": "^1.11.0",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.9.5",
+    "mysql2": "^3.12.0",
+    "sequelize": "^6.37.5"
+  }
+}

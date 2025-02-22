@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Pune Tourism</h1>
+        <form id="btn" action="/" method="get">
+            <button type="submit">Home</button>
+        </form>
+        <form id="btn" action="/restaurent" method="get">
+            <button type="submit">Food</button>
+        </form>
+         <form id="btn" action="/market" method="get">
+            <button type="submit">Markets</button>
+        </form>
+         <form id="btn" action="/activity" method="get">
+            <button type="submit">Activites</button>
+        </form>
+        </div>
+<main>
+    <article>
+        <header id="hotel_name">
+            <h1>{{content.name}}</h1>
+        </header>
+
+        <div class="slider">
+        <div class="slides">
+            <!-- Each image wrapped in a div -->
+            <div class="slide"><img src={{content.imageURL1}} alt="Image 1"></div>
+            <div class="slide"><img src={{content.imageURL2}} alt="Image 2"></div>
+            <div class="slide"><img src={{content.imageURL3}} alt="Image 3"></div>
+            
+        </div>
+    </div>
+
+    <div class="owner">
+        <h2>Owner:{{content.owner}}</h2>
+    </div>
+    <div class="price">
+        <h2>Price: {{content.price}}</h2>
+    </div>
+    <div class="address">
+        <h3>Address:{{content.address}}</h3>
+    </div>
+    <div class="contact">
+                    <h4>Contact Details:{{content.contact}}</h4>
+                </div>
+                <div id="ammenitites">
+                    <h4>Couple-Friendly</h4>
+                </div>
+                <div class="rating_star">
+                    <h5>Ratings:{{content.rating}}/5</h5>
+                </div>
+        
+    </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

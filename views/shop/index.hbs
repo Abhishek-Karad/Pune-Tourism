@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Tourism - Luxury Experience</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Discover Pune's Luxury</h1>
+            <p>Explore Breathtaking Places, Fine Dining, and an Elite Experience.</p>
+        </div>
+    </header>
+
+    
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Pune_West_skyline_-_March_2017.jpg/288px-Pune_West_skyline_-_March_2017.jpg" alt="Luxury Pune"></div>
+            <div class="slide"><img src="https://cdn.britannica.com/69/146869-050-676DD6B7/Aga-Khan-Palace-Pune-India.jpg" alt="Rich Culture"></div>
+            <div class="slide"><img src="https://www.tripsavvy.com/thmb/JR95Cc--TdV7YCR7noT5uAy0mMs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-521733846_Darkroom-125adbb08a044a2db915fefc1eb741b2.jpg" alt="Fine Dining"></div>
+            <div class="slide"><img src="https://source.unsplash.com/1600x900/?city,architecture" alt="Modern Living"></div>
+        </div>
+        <div class="dots"></div>
+    </div>
+
+    
+    <div class="action-buttons">
+        <a href="/hotel" class="btn"> Hotels</a>
+        <a href="/restaurent" class="btn"> Dining</a>
+        <a href="/market" class="btn"> Shopping</a>
+        <a href="/activity" class="btn"> Activities</a>
+
+        {{#if isAuthenticated}}
+            <a href="/admin/list-place" class="btn admin-btn">🔑 Admin Panel</a>
+            <form action="/logout" method="post">
+             <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                <button class="btn logout-btn">Logout</button> 
+            </form>
+        {{else}}
+            <a href="/login" class="btn">Login</a>
+            <a href="/signup" class="btn">Signup</a>
+        {{/if}}
+    </div>
+
+
+    <footer>
+        <p>Pune Tourism - A Premium Experience | Designed by <strong>Abhishek Karad</strong></p>
+    </footer>
+
+</body>
+</html>

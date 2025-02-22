@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Tourism - Admin View</title>
+    <link rel="stylesheet" href="/css/admin-rest.css">
+    
+</head>
+<body>
+    <div class="navbar">
+        <h1>Pune Tourism</h1>
+        <form class="nav-btn" action="/" method="get">
+            <button type="submit">Home</button>
+        </form>
+        <form class="nav-btn" action="/restaurent" method="get">
+            <button type="submit">Find Places to Eat</button>
+        </form>
+        <form class="nav-btn" action="/market" method="get">
+            <button type="submit">Find Markets to Visit</button>
+        </form>
+        <form class="nav-btn" action="/activity" method="get">
+            <button type="submit">Find Activities Happening</button>
+        </form>
+        <h3 style="color: white; padding-left: 100px;">Admin-View</h3>
+    </div>
+
+    <main>
+        {{#if content.length}} 
+        <div class="hotel-container">
+            {{#each content }}  
+            <article>
+                <header id="hotel_name">
+                    <h1>{{this.name}}</h1>
+                </header>
+                <div class="img_area">
+                    <img src="{{this.imageURL}}" alt="Market Image">
+                </div>
+                <div class="owner">
+                    <h3>Owner: {{this.owner}}</h3>
+                </div>
+                <div class="price">
+                    <h4>Average Cost: {{this.cost}}</h4>
+                </div>
+                <div class="address">
+                    <p>Address: {{this.address}}</p>
+                </div>
+                <div class="contact">
+                    <h4>Contact Details: {{this.contact}}</h4>
+                </div>
+                <div class="rating_star">
+                    <h5>Ratings: {{this.rating}}/5</h5>
+                </div>
+                <form action="/admin/delete-Market" method="post">
+                   <input type="hidden" value="{{this._id}}" name="_id">
+                    <button>Delete</button>
+                </form>
+            </article>
+            {{/each}}
+        </div>
+        {{else}}
+        <h1>No Markets to Display</h1>
+        {{/if}}
+    </main>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="/css/product.css">
+
+</head>
+<body>
+    <div class="navbar">
+        <h1>Pune Tourism</h1>
+        <form id="btn" action="/" method="get">
+            <button type="submit">Home</button>
+        </form>
+        <form id="btn" action="/restaurent" method="get">
+            <button type="submit">Food</button>
+        </form>
+         <form id="btn" action="/market" method="get">
+            <button type="submit">Markets</button>
+        </form>
+         <form id="btn" action="/activity" method="get">
+            <button type="submit">Activites</button>
+        </form>
+        </div>
+<main>
+    <div class="hotel-container">
+                 
+                <article>
+                <header id="hotel_name">
+                    <h1>{{content.name}}</h1>
+                </header>
+                <div id="photoarea">
+                <div class="slide">
+                <img src="{{content.imageURL}}" alt="">
+                </div>
+                </div>
+                
+                <div class="owner">
+                    <h3>Owner:{{content.organizer}}</h3>
+                </div>
+                <div class="price">
+                    <h4>Ticket Price:{{content.price}}</h4>
+                </div>
+                <div class="address">
+                    <p>Address:{{content.address}}</p>
+                </div>
+                <div class="contact">
+                    <h4>Contact Details:{{content.contact}}</h4>
+                </div>
+                <div class="rating_star">
+                    <h5>Ratings:{{content.rating}}/5</h5>
+                </div>
+                </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
