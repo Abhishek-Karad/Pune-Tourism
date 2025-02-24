@@ -10,7 +10,8 @@ exports.getlogin=(req,res)=>{
 
 exports.getsignup=(req,res)=>{
     res.render('auth/signup',{
-        path:'/signup'
+        path:'/signup',
+        csrfToken:req.csrfToken()
     })
 };
 //post 2 request for forms 

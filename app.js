@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const { engine } = require("express-handlebars");
 const mongoose = require("mongoose");
 const mongodbstore=require('connect-mongodb-session')(session);
-const csurf=require('csurf');
+const csrf=require('csurf');
 
 const MONGODBURL =
   "mongodb+srv://abhishekkarad29:vUHRQR1BneEOPoB2@cluster0.26upo.mongodb.net/tourism";
@@ -45,7 +45,7 @@ app.use(
 );
 
 
-const csurfProtection=csurf();
+const csurfProtection=csrf();
 app.use(csurfProtection);
 
 

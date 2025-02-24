@@ -37,7 +37,7 @@
                     <h3>Owner:{{this.organizer}}</h3>
                 </div>
                 <div class="price">
-                    <h4>Ticket Price:{{this.price}}</h4>
+                    <h4>Ticket Price: ₹{{this.price}}</h4>
                 </div>
                 <div class="address">
                     <p>Address:{{this.address}}</p>
@@ -49,6 +49,7 @@
                     <h5>Ratings:{{this.rating}}/5</h5>
                 </div>
                  <form action="/admin/delete-activity" method="post">
+                   <input type="hidden" name="_csrf" value="{{csrfToken}}">
                    <input type="hidden" value="{{this._id}}" name="_id">
                     <button>Delete</button>
                 </form>

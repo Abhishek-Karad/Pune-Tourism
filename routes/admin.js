@@ -24,6 +24,8 @@ router.get('/list-place/restaurent-form',isAuth,adminController.getrest);
 router.post('/list-place/restaurent-form',isAuth,adminController.postrestauraentform);
 router.get('/view-restaurants',isAuth,adminController.viewRestaurants);
 router.post('/delete-Restaurant',isAuth,adminController.DeleteRest);
+router.get('/edit-restaurant/:id',isAuth,adminController.geteditrest);
+router.post('/edit-restaurant',isAuth,adminController.posteditrestaurant);
 
 //Activity
 router.get('/list-place/activity-form',isAuth,adminController.getactivity);

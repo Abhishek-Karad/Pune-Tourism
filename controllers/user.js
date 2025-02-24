@@ -2,14 +2,14 @@ const HotelContent=require('../model/hotel');
 const restaurentContent=require('../model/restaurant');
 const activityContent=require('../model/activity'); 
 const marketContent=require('../model/market');
-const csurf = require('csurf');
+const csrf = require('csurf');
 //Loading the Index page
 exports.getIndex=(req,res,next)=>{
     res.render('shop/index',{
         path:'/',
         pageTitle:'Home',
         isAuthenticated:req.session.isLoggedin,
-        csurfToken:req.csrfToken()
+        csrfToken:req.csrfToken()
 
     });
 }
@@ -17,7 +17,8 @@ exports.getIndex=(req,res,next)=>{
 //loading the comman listing and admin page
 exports.manageListing=(req,res,next)=>{
     res.render('/admin/divert',{
-        path:'/list-place',isAuthenticated:req.session.isLoggedin
+        path:'/list-place',isAuthenticated:req.session.isLoggedin,
+        csrfToken:req.csrfToken()
     });
 }
 
@@ -28,7 +29,7 @@ exports.displayHotel=(req,res)=>{
         res.render('shop/hotel',{
             content:content,
             path:'/hotel',
-            isAuthenticated:req.session.isLoggedin
+            isAuthenticated:req.session.isLoggedin,csrfToken:req.csrfToken()
         })
     })
     .catch(err=>{console.log(err)});
@@ -40,7 +41,7 @@ exports.displayRestaurent=(req,res)=>{
         console.log(content);
         res.render('shop/restaurent',{
             content:content,
-            path:'/restaurant',isAuthenticated:req.session.isLoggedin
+            path:'/restaurant',isAuthenticated:req.session.isLoggedin,csrfToken:req.csrfToken()
         })
     })
     .catch(err=>{console.log(err)});
@@ -54,7 +55,8 @@ exports.displayActivities=(req,res)=>{
         res.render('shop/activity',{
             content:content,
             path:'/activity',
-            isAuthenticated:req.isLoggedin
+            isAuthenticated:req.isLoggedin,
+            csrfToken:req.csrfToken()
         })
     })
     .catch(err=>{console.log(err)})
@@ -67,7 +69,7 @@ exports.displaymarket=(req,res)=>{
         res.render('shop/market',{
             content:content,
             path:'/market',
-            isAuthenticated:req.isLoggedin
+            isAuthenticated:req.isLoggedin,csrfToken:req.csrfToken()
         })
     })
     .catch(err=>{console.log(err)});
@@ -84,7 +86,8 @@ exports.OneHotel=(req,res)=>{
         res.render('shop/specific/hotel-spec',{
             content:hotel,
             path:'/specific/hotel-spec/:id',
-            isAuthenticated:req.isLoggedin
+            isAuthenticated:req.isLoggedin,
+            csrfToken:req.csrfToken()
         })
     })
 }
@@ -100,7 +103,8 @@ exports.OneRestaurant=(req,res)=>{
         res.render('shop/specific/rest-spec',{
             content:restaurant,
             path:'/specific/restaurant-spec/:id',
-            isAuthenticated:req.isLoggedin
+            isAuthenticated:req.isLoggedin,csrfToken:req.csrfToken()
+
         })
     })
 
@@ -118,7 +122,7 @@ exports.OneMarket=(req,res)=>{
         res.render('shop/specific/market-spec',{
             content:market,
             path:'/specific/market-spec/:id',
-            isAuthenticated:req.isLoggedin
+            isAuthenticated:req.isLoggedin,csrfToken:req.csrfToken()
         })
     })
 }
@@ -134,7 +138,7 @@ exports.oneActivity=(req,res)=>{
         res.render('shop/specific/activity-spec',{
             content:activity,
             path:'/specific/activity-spec/:id',
-            isAuthenticated:req.isLoggedin
+            isAuthenticated:req.isLoggedin,csrfToken:req.csrfToken()
         })
     })
 }
